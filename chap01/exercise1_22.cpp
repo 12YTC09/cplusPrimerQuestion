@@ -9,28 +9,32 @@
 
 int main(){
 
-   Sales_item book1,book2;
+   Sales_item total,item;
 
+   if(std::cin >> total){
+         while(std::cin >> item)
+         {
+     if(total.isbn  == item.isbn){
 
-   while(std::cin >> book1){
+         total += item;
+     } 
+     else{
+         std::cout << total << std::endl;
+         total = item;
 
-         
-        book2 = book1;
+     }
+                   
+         }
 
-
-
-   }
-
-
-
-
-   if(book1.isbn == book2.isbn){
-
-     
-   std::cout << book1 + book2  << std::endl;
-
+   std::cout << total << std::endl;
 
    }
+   else{
+        std::cout << "No data" << std::endl;
+        return -1;
+        
+   }
+
 
 
    return 0;
